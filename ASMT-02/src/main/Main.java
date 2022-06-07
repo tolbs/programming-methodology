@@ -1,9 +1,22 @@
 package main;
 
+import java.util.Scanner;
+
 public class Main {
 
     public static void main(String[] args) {
-	// write your code here
-        System.out.println("Hello world!");
+        //read user input and tokenize it
+
+        Scanner scanner = new Scanner(System.in);
+        String user_input = scanner.nextLine();
+
+        Query query = InputParser.parse(user_input);
+        System.out.println(query.getWord());
+        if(query.getIsDistinct()) {
+            System.out.println("Unique entries only!");
+        }
+        if(query.getIsReversed()) {
+            System.out.println("Starting from the back!");
+        }
     }
 }
