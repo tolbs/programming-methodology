@@ -5,23 +5,18 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
+        //read user input and tokenize it
+
         Scanner scanner = new Scanner(System.in);
-        String input = scanner.nextLine();
+        String user_input = scanner.nextLine();
 
-        //split into words and turn them into lowercase
-        String[] words = input.split(" ");
-        for (int i = 0; i < words.length; i++) {
-            words[i] = words[i].toLowerCase();
+        Query query = InputParser.parse(user_input);
+        System.out.println(query.getWord());
+        if(query.getIsDistinct()) {
+            System.out.println("Unique entries only!");
         }
-
-        //parse the input
-        InputParser inputParser = new InputParser();
-        ParsedQuery parsedQuery = InputParser.parseInput(words);
-
-        //print the result
-        System.out.println(parsedQuery.getWord());
-        System.out.println(parsedQuery.getPartOfSpeech());
-        System.out.println(parsedQuery.getIsDistinct());
-        System.out.println(parsedQuery.getIsReversed());
+        if(query.getIsReversed()) {
+            System.out.println("Starting from the back!");
+        }
     }
 }
