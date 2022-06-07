@@ -6,8 +6,8 @@ public class Query {
 
     //optional parameters
     private String part_of_speech;
-    boolean is_distinct;
-    boolean is_reversed;
+    private boolean is_distinct;
+    private boolean is_reversed;
 
 
     public String getWord(){
