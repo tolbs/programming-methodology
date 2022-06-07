@@ -23,5 +23,12 @@
 hs_err_pid*
 
 ASMT-02/.idea/
+.idea/misc.xml
 
-ASMT-02/ASMT-02.iml
+.idea/modules.xml
+
+.idea/runConfigurations.xml
+
+.idea/vcs.xml
+
+.idea/

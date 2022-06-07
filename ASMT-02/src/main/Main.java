@@ -1,4 +1,4 @@
-package edu.sfsu;
+package main;
 
 public class Main {
 
