@@ -10,6 +10,8 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         String user_input = scanner.nextLine();
 
+        //@TODO: make loop end when user types "quit"
+
         Query query = InputParser.parse(user_input);
         System.out.println(query.getWord());
         if(query.getIsDistinct()) {
