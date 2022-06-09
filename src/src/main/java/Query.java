@@ -1,13 +1,11 @@
-package main;
-
 public class Query {
     //required parameters
-    private String word;
+    private final String word;
 
     //optional parameters
-    private String part_of_speech;
-    private boolean is_distinct;
-    private boolean is_reversed;
+    private final String part_of_speech;
+    private final boolean is_distinct;
+    private final boolean is_reversed;
 
 
     public String getWord(){
@@ -35,7 +33,7 @@ public class Query {
 
     public static class QueryBuilder {
         //required parameters
-        private String word;
+        private final String word;
 
         //optional parameters
         private String part_of_speech;

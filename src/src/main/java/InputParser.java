@@ -1,5 +1,3 @@
-package main;
-
 public class InputParser {
 
     public static Query parse(String input) {
