@@ -1,2 +1,6 @@
 
 ASMT-02/.idea/
+
+src/.idea/
+
+*.class

@@ -3,7 +3,7 @@ public class InputParser {
     public static Query parse(String input) {
 
         //@TODO: account for leading white space
-        String[] tokens = input.toUpperCase().split(" ");
+        String[] tokens = input.toUpperCase().trim().split("\s+");
         Query.QueryBuilder builder = new Query.QueryBuilder(tokens[0]);
         for (int i = 1; i < tokens.length; i++) {
             String token = tokens[i];
