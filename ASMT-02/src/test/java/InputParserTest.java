@@ -73,7 +73,7 @@ public class InputParserTest {
         part_of_speech.add("verb");
 
         Query query = InputParser.parse(input);
-        Assert.assertTrue(part_of_speech.contains(query.getPartOfSpeech()));
+        Assert.assertTrue(part_of_speech.contains(query.getPartOfSpeech().toLowerCase()));
     }
 
 
