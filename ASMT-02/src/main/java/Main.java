@@ -3,15 +3,17 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-        //read user input and tokenize it
-
+        int queryCount = 1;
         Scanner scanner = new Scanner(System.in);
+
+        System.out.println("===== DICTIONARY 340 JAVA =====");
+        System.out.print("Search [" + queryCount + "]: ");
         String user_input = scanner.nextLine();
+        String[] tokens = user_input.toUpperCase().trim().split("\s+");
 
-        //@TODO: make loop end when user types "quit"
-
-        while (!user_input.equals("quit")) {
-            Query query = InputParser.parse(user_input);
+        while (!tokens[0].equals("!QUIT")) {
+            queryCount++;
+            Query query = InputParser.parse(tokens);
             System.out.println("Keyword: " + query.getWord());
             System.out.println("Part of speech: " + query.getPartOfSpeech());
 
@@ -21,7 +23,9 @@ public class Main {
             if (query.getIsReversed()) {
                 System.out.println("Starting from the back!");
             }
+            System.out.print("Search [" + queryCount + "]: ");
             user_input = scanner.nextLine();
+            tokens = user_input.toUpperCase().trim().split("\s+");
         }
     }
 }

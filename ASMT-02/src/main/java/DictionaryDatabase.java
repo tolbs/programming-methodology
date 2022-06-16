@@ -1,3 +1,3 @@
-public enum DictionarySource {
-    
+public enum DictionaryDatabase {
+
 }

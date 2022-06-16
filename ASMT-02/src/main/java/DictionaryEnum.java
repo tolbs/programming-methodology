@@ -1,10 +1,9 @@
 public enum DictionaryEnum {
 
-    //@TODO: format this better
+    //@TODO: format this better or find a better approach
     ARROW("Arrow", new String[] {
             "noun"
     }, new String[]
-
             {
                     "Here is one arrow: <IMG> -=>> </IMG>"
             }),
@@ -22,9 +21,8 @@ public enum DictionaryEnum {
                 "noun"
     },
             new String[]
-
     {
-        "Familiar. Worked in Java.",
+            "Familiar. Worked in Java.",
                 "Unique. No duplicates. Clearly different or of a different kind.",
                 "Uniquely. Written \"distinctly\".",
                 "A keyword in this assignment.",

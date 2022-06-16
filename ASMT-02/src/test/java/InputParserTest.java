@@ -10,35 +10,40 @@ public class InputParserTest {
     @Test
     public void BasicKeywordParse1() {
         String input = "  wOrd   ";
-        Query query = InputParser.parse(input);
+        String[] tokens = input.trim().split("\s+");
+        Query query = InputParser.parse(tokens);
         Assert.assertEquals("WORD", query.getWord());
     }
 
     @Test
     public void BasicKeywordParse2() {
         String input = "  wORd    WorD2 word34     word664";
-        Query query = InputParser.parse(input);
+        String[] tokens = input.trim().split("\s+");
+        Query query = InputParser.parse(tokens);
         Assert.assertEquals("WORD", query.getWord());
     }
 
     @Test
     public void DistinctFlagTest1() {
         String input = "    distinct distinct   ";
-        Query query = InputParser.parse(input);
+        String[] tokens = input.trim().split("\s+");
+        Query query = InputParser.parse(tokens);
         Assert.assertTrue(query.getIsDistinct());
     }
 
     @Test
     public void DistinctFlagTest2() {
         String input = "word noun distinct";
-        Query query = InputParser.parse(input);
+        String[] tokens = input.trim().split("\s+");
+        Query query = InputParser.parse(tokens);
         Assert.assertTrue(query.getIsDistinct());
     }
 
     @Test
     public void DistinctFlagTest3() {
         String input = "word noun reverse distinct";
-        Query query = InputParser.parse(input);
+        String[] tokens = input.trim().split("\s+");
+        Query query = InputParser.parse(tokens);
         Assert.assertTrue(query.getIsDistinct());
     }
 
@@ -55,7 +60,8 @@ public class InputParserTest {
         part_of_speech.add("pronoun");
         part_of_speech.add("verb");
 
-        Query query = InputParser.parse(input);
+        String[] tokens = input.trim().split("\s+");
+        Query query = InputParser.parse(tokens);
         Assert.assertFalse(part_of_speech.contains(query.getPartOfSpeech()));
     }
 
@@ -72,7 +78,8 @@ public class InputParserTest {
         part_of_speech.add("pronoun");
         part_of_speech.add("verb");
 
-        Query query = InputParser.parse(input);
+        String[] tokens = input.trim().split("\s+");
+        Query query = InputParser.parse(tokens);
         Assert.assertTrue(part_of_speech.contains(query.getPartOfSpeech().toLowerCase()));
     }
 
